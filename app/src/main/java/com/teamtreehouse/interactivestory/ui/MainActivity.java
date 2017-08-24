@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 startStory(name);
             }
         });
+
     }
 
     private void startStory(String name) {
@@ -37,5 +38,11 @@ public class MainActivity extends AppCompatActivity {
         String key = resources.getString(R.string.key_name);
         intent.putExtra(key, name);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        nameField.setText("");
     }
 }
